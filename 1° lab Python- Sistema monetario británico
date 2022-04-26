@@ -1,0 +1,19 @@
+ """
+ En el viejo sistema monetario británico había 20 chelines en una libra y 12 peniques en un chelín. Después del llamado “día decimal” (15 de febrero de 1971), el 
+ valor de la libra se mantuvo intacto, pero el valor de los peniques cambió. En este nuevo sistema, una libra no tiene chelines, y más bien se compone únicamente 
+ de 100 nuevos peniques.
+ Este programa lee el valor monetario antiguo en libras, chelines y peniques, y que luego escribe en pantalla el equivalente, en peniques del nuevo sistema.
+ """
+ 
+ print("\nSistema monetario britanico antiguo")
+libras = float(input("Escriba las libras: "))
+chelines = float(input("Escriba los chelines: "))
+peniquesviejos = float(input("Escriba los peniques: "))
+
+libras_a_peniques = libras * (100/1)
+chelines_a_peniques = chelines * (1/20) * (100/1)
+pviejos_a_pnuevos = peniquesviejos * (1/12) * (1/20) * (100/1)
+
+suma = libras_a_peniques + chelines_a_peniques + pviejos_a_pnuevos  
+
+print("El valor en el sistema actual es de", round(suma, 2) , "peniques")
