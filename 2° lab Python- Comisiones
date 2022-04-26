@@ -1,0 +1,26 @@
+"""
+Debido a la crisis del Covid-19, una empresa grande quiso apoyar a sus empleados incorporando la venta de artículos de salud. Los empleados recibirán ₡ 50 000 
+adicionales por mes, más el 20% de sus ventas brutas durante ese mes, en los nuevos artículos de salud. Por ejemplo, un vendedor que vende ₡ 100 000 de esta
+mercancía, recibe ₡50 000 más el 20% de 100 000, o sea ₡ 70 000 adicionales a su salario regular. Los productos de salud tienen los precios que se muestran a 
+continuación: Mascarilla ₡ 650, Careta ₡ 3500, Un par de guantes ₡ 100, Botella de alcohol en gel 500ml ₡ 2750.
+Este es un programa de Python que va a usar un vendedor para sacar su ganancia mensual: él o ella inserta el valor de su salario regular, lo que vendió en 
+artículos de salud, y el programa le determina cuánto será su pago (bruto). Para ello, el programa le pregunta cuántos artículos vendió de cada producto disponible.
+"""
+
+print ("\nPrograma para calcular el salario bruto de una empresa")
+salario = float(input("Ingrese su salario: "))
+mascarilla = float(input("Cuantas mascarillas vendio?: "))
+caretas = float(input("Cuantas caretas vendio?: "))
+guantes = float(input("Cuantos pares de guantes vendio?: "))
+alcohol = float(input("Cuantas botellas de alcohol vendio?: "))
+
+g_mascarillas = float(mascarilla * 650)
+g_caretas = float(caretas * 3500)
+g_guantes = float(guantes * 100)
+g_alcohol = float(alcohol * 2750)
+
+total_vendido = (g_mascarillas + g_caretas + g_guantes + g_alcohol) * 0.2
+
+total = salario + total_vendido + 50000
+
+print("El valor total es de: ", round(total) , "colones")
