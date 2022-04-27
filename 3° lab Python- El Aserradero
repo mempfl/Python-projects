@@ -1,0 +1,37 @@
+"""
+Una empresa de procesamiento de madera muy valiosa se dedica a generar y vender tucas al por mayor. La empresa recibe de diferentes proveedores troncos de 
+todo tamaño de entre 0 y 60 metros de largo. Por convenios que tiene con otras empresas a los cuales vende sus productos, y por su rentabilidad, la empresa 
+tiene el siguiente sistema:
+1) Cada tronco se corta en pedazos de 150 cm, estos serán tucas de tipo A. La venta de estas tucas le genera a la empresa una ganancia de $95 por tuca.
+2) Si sobra algún un pedazo de tronco después de eso, el sobrante se corta en pedazos de 27 cm. Estos pedazos conforman las tucas de tipo B, cuyas ventas 
+generan una ganancia de $12 por tuca.
+3) Si aún sobra tronco, el sobrante se corta en pedazos de 6 cm. Estos conforman las tucas de tipo C, que al venderlas generan una ganancia de $2 cada una.
+4) El resto del tronco se desecha.
+Este programa en Python pregunta al usuario la longitud de un tronco que va a procesar en metros y el programa determina a partir de esa materia prima:
+la cantidad de tucas de cada tipo se fabrican, la cantidad de material se desecha en centímetros y la ganancia en dólares trae a la empresa esa materia prima.
+"""
+
+longitud_m = float(input('Escriba la longitud en metros: '))
+
+longitud_cm = longitud_m * 100 # conversion m a cm
+
+tipo_a = round(longitud_cm // 150)
+resto_a = longitud_cm % 150
+ganancia_a = tipo_a * 95
+
+tipo_b = round(resto_a // 27)
+resto_b = resto_a % 27
+ganancia_b = tipo_b * 12
+
+tipo_c = round(resto_b // 6)
+resto_c = round(resto_b % 6)
+ganancia_c = tipo_c * 2
+
+ganancia_total = ganancia_a + ganancia_b + ganancia_c
+
+print('Este tronco genera: ')
+print(tipo_a , 'tucas de tipo A')
+print(tipo_b , 'tucas de tipo B')
+print(tipo_c , 'tucas de tipo C')
+print('Se desechan ', resto_c, 'cm de material')
+print('La ganancia es de $', ganancia_total , 'dolares')
