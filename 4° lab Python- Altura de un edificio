@@ -1,0 +1,24 @@
+"""
+Un observador desde una distancia horizontal 𝑥 a la base de un edificio mira hacia arriba y logra divisar su techo. Se formaría un triángulo rectángulo entre 
+estos 3 puntos: la base de la torre, la locación del observador y el límite superior del edificio. Por simplicidad no tomaremos en cuenta la altura de la persona.
+El observador conoce la distancia horizontal desde él hasta la base del edificio, pero solo podría calcular de forma aproximada el ángulo de observación con el 
+que divisa el techo.
+Este programa calcula el alto del edificio y considera varios posibles ángulos de observación, comenzando por 𝑎 grados hasta 𝑏 grados, en aumentos de 5 grados. El 
+cálculo se muestra línea por línea.
+Para ello, el programa solicita al usuario (observador) la distancia horizontal con el edificio, un número entero 𝑎 y un número entero 𝑏, ambos valores medidos 
+en grados.
+El programa valida que tanto 𝑎 como 𝑏 estén entre 0 y 90 grados, excluyéndolos. Si el número insertado no está en ese rango, el programa va a mostrar un mensaje de 
+error: “Entradas inválidas” y va a terminar.
+"""
+
+import math
+
+distancia = float(input('A que distancia en m se encuentra?'))
+numero_a = int(input('Por favor ingrese el valor del limite a:'))
+numero_b = int(input('Por favor ingrese el valor del limite b:'))
+
+if 0 < numero_a < 90 and 0 < numero_b < 90 :
+    for contador in range (numero_a, numero_b+1 , 5):
+        print('Angulo de', contador, 'grados >>> ', round((math.tan(math.radians(contador)) * distancia),2) , "m")
+else:
+    print('Entradas invalidas')
